@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="http://localhost:5000/submit" method="POST">
+
+
+    <label for="topic">What's the topic?</label>
+    <input type="text" name="topic" value="">
+    
+    <label for="questions">How many questions?</label>
+    <input type="number" name="questions" value="">
+
+    <label for="choices">Number of choices?</label>
+    <select name="choices" id="choices">
+      <option value="two">Two</option>
+      <option value="three">Three</option>
+      <option value="four">Four</option>
+      <option value="true/false">True/False</option>
+    </select>
+    
+    <label for="difficulty">Difficulty?</label>
+    <select name="difficulty" id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
