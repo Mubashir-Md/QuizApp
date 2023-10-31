@@ -21,7 +21,23 @@
   <!-- {{content}} -->
   <div class="quiz">
     <!-- Parse the quiz content into individual questions -->
-    {{content}}
+    <h1>{{ content.topic }}</h1>
+    <div>
+        {% for question in content.questions %}
+        <div>
+            <h3>{{ question.question }}</h3>
+            <div class="choices">
+                <ul>
+                    {% for choice in question.choices %}
+                    <li>
+                        <input type="radio" name="choice">{{ choice }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
   </div>
 </body>
 

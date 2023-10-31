@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
 import openai
 import os
+import dotenv
+import json
+
+dotenv.load_dotenv()
 
 app = Flask(__name__)
 
@@ -26,7 +30,7 @@ def submit():
             messages=[
                 {
                     "role": "system",
-                    "content": f"Hey chat gpt prepare a quick quiz on this topic: {topic} and prepare {questions} number of questions and for each of them keep {choices} number of choices, also keep the difficulty level {difficulty}"
+                    "content": f"Hey chat gpt prepare a quick quiz on this topic: {topic} and prepare {questions} number of questions and for each of them keep {choices} number of choices, also keep the difficulty level {difficulty}, reply in the form of an object."
                 }
             ],
             temperature=0.7
@@ -37,9 +41,11 @@ def submit():
         # The difficulty level is easy.\n\nQuestion 1: Which animal is known for having a long trunk?\na) Giraffe\nb) Elephant\nc) Lion\nd) bro\n\nQuestion 2: Which animal is known for its black and white stripes?\na) Zebra\nb) Kangaroo\nc) Penguin\nd) bro\n\nQuestion 3: Which animal is known for its loud roar?\na) Tiger\nb) Dolphin\nc) Gorilla\nd) bro\n\nQuestion 4: Which animal is known for its humps?\na) Camel\nb) Cheetah\nc) Hippopotamus\nd) bro\n\nQuestion 5: Which animal is known for its large antlers?\na) Moose\nb) Penguin\nc) Kangaroo\nd) bro"
         # Extracting the quiz content from the response
         quiz_content = response["choices"][0]["message"]["content"]
-
-        
-        return render_template("submit.html", content=quiz_content, choices=choices)
+        print(quiz_content)
+        response = json.loads(quiz_content)
+        print("\n")
+        print(response)
+        return render_template("submit.html", content=response)
 
 
 app.run(debug=True)
