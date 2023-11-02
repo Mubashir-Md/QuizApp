@@ -51,16 +51,17 @@ def submit():
         # print(request.args)
         score = 0
         actual_answers = []
-        given_answers = list(request.args.values())
+        given_answers = list(request.args.values()) or []
         res = session.get('response', None)
         for ans in res["questions"]:
             actual_answers.append(ans["answer"])
             
         print(actual_answers)
         print(given_answers)
-        for i in range(len(actual_answers)):
-            if(actual_answers[i] == given_answers[i]):
-                score += 1
+        if(len(given_answers) != 0):
+            for i in range(len(actual_answers)):
+                if(actual_answers[i] == given_answers[i]):
+                    score += 1
         return render_template("score.html", score=score, correct_answers=actual_answers, given_answers=given_answers)
 
 

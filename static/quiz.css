@@ -32,18 +32,56 @@ div.quiz div.questions {
   flex-direction: column;
   padding: 20px;
   width: 50%;
+  margin: 20px 0;
 }
 
+div.questions h1{
+    text-align: center;
+    font-size: 2rem;
+    margin: 15px 0;
+}
+form div.question{
+  margin: 10px;
+}
+form div.choices{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 div.choices input{
     margin: 10px;
 
 }
 
-div.quiz button{
-    padding: 10px;
+form button{
+    padding: 10px 20px;
     border-radius: 5px;
-    outline: none;
-    font-size: 1rem;
+    text-align: center;
+    border: none;
+    font-size: 1.2rem;
     cursor: pointer;
-    
+    margin: 15px auto;
+    /* width: 50%; */
+}
+
+@media (max-width:600px) and (min-width: 280px) {
+  div.quiz{
+    height: 100%;
+  }
+  div.quiz div.questions {
+    width: 90%;
+  }
+  div.quiz h1{
+    width: 100%;
+
+  }
+  div questions form{
+    width: 100%;
+  }
+  form button{
+    /* width: 80%; */
+    background-color: #000;
+    color: #fff;
+
+  }
 }
