@@ -6,11 +6,12 @@
 
 /* Background styles */
 div.main {
-  background-image: url("/static/bgUnsplash.jpg");
+  background-image: url("/static/quiz.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
