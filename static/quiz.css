@@ -19,7 +19,7 @@ div.quiz {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 div.quiz div.questions {
@@ -61,6 +61,8 @@ form button{
     font-size: 1.2rem;
     cursor: pointer;
     margin: 15px auto;
+    background-color: #000;
+    color: #fff;
     /* width: 50%; */
 }
 
