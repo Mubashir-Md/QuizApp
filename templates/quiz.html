@@ -12,7 +12,7 @@
       <!-- Render all questions and choices at once -->
       <div class="questions">
         <h1>{{ content.topic }}</h1>
-        <form action="https://ai-quiz-umber.vercel.app/quiz" method="GET" class="question">
+        <form action="https://ai-quiz-app.onrender.com/quiz" method="GET" class="question">
           {% for question in content.questions %}
           <div class="question">
             <p>{{loop.index}}. {{ question.question }}</p>
