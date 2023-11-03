@@ -19,7 +19,7 @@ div.quiz {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
+  height: 100dvh;
 }
 
 div.quiz div.questions {
@@ -33,6 +33,7 @@ div.quiz div.questions {
   padding: 20px;
   width: 50%;
   margin: 20px 0;
+  overflow-y: auto;
 }
 
 div.questions h1{
@@ -68,10 +69,11 @@ form button{
 
 @media (max-width:600px) and (min-width: 280px) {
   div.quiz{
-    height: 100%;
+    height: 100dvh;
   }
   div.quiz div.questions {
     width: 90%;
+    overflow-y: auto;
   }
   div.quiz h1{
     width: 100%;

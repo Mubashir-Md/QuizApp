@@ -65,4 +65,4 @@ def submit():
         return render_template("score.html", score=score, correct_answers=actual_answers, given_answers=given_answers)
 
 
-
+# app.run(debug=True, host='localhost', port=5000)
