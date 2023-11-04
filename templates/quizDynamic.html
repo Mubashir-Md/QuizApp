@@ -47,16 +47,13 @@
               <label for="{{choice}}">{{choice}}</label>
             </div>
             {% endfor %}
-            <div>The answer is "{{ question.answer }}"</div>
           </div>
           {% endfor %}
           <button type="submit">Submit</button>
-        </form>
-        <form
-          action="http://localhost:5000/quiz/{{content.topic}}"
-          class="question"
-        >
-          <button type="submit">Get the URL</button>
+          <div class="share">
+            <h2>Share this quiz with your friends</h2>
+            <img src="{{qrcode(url, box_size=5, border=5)}}" alt="A QR code" />
+          </div>
         </form>
       </div>
     </div>

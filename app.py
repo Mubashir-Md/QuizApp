@@ -3,10 +3,12 @@ import openai
 import os
 import dotenv
 import json
+from flask_qrcode import QRcode
 
 dotenv.load_dotenv()
 
 app = Flask(__name__)
+QRcode(app)
 
 app.secret_key = os.environ.get("SECRET_KEY")
 
@@ -65,4 +67,13 @@ def submit():
         return render_template("score.html", score=score, correct_answers=actual_answers, given_answers=given_answers)
 
 
-# app.run(debug=True, host='localhost', port=5000)
+@app.route("/quiz/<topic>")
+def quiz(topic):
+    res = session.get('response', None)
+    new_topic = topic.split("%20")[0]
+    print(new_topic)
+    # quiz_url = f"http://localhost:5000/quiz/{new_topic}"
+    quiz_url = f"https://ai-quiz-app.onrender.com/quiz/{new_topic}"
+    return render_template("quizDynamic.html", topic=topic, content=res, url=quiz_url)
+
+# app.run(debug=True)
