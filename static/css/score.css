@@ -10,7 +10,7 @@ body {
 }
 
 div.scorecard {
-  background-image: url("/static/scores.jpg");
+  background-image: url("/static/images/scores.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

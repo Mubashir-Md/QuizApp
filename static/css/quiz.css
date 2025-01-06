@@ -10,7 +10,7 @@ body {
 }
 
 div.quiz {
-  background-image: url("/static/exam.jpg");
+  background-image: url("/static/images/exam.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

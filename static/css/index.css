@@ -6,7 +6,7 @@
 
 /* Background styles */
 div.main {
-  background-image: url("/static/thinking.jpg");
+  background-image: url("/static/images/thinking.jpg");
   object-fit: cover;
   background-position: center;
   background-size: cover;
@@ -130,7 +130,7 @@ form button {
 
 
 .loading-screen {
-  background-image: url("/static/thinking.jpg");
+  background-image: url("/static/images/thinking.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

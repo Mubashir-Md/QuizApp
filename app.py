@@ -94,5 +94,6 @@ def submit():
 #     quiz_url = f"https://ai-quiz-app.onrender.com/quiz/{new_topic}"
 #     return render_template("quizDynamic.html", topic=topic, content=res, url=quiz_url)
 
-# app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
 
