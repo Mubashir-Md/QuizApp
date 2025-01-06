@@ -22,11 +22,22 @@ div.scorecard {
   height: 100vh;
 }
 
-div.scorecard div.scores {
+div.card{
+  backdrop-filter: blur(17px) saturate(200%);
+  filter: drop-shadow(10px 10px 10px white);
+  -webkit-backdrop-filter: blur(17px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.card div.scores {
   backdrop-filter: blur(17px) saturate(200%);
   -webkit-backdrop-filter: blur(17px) saturate(200%);
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 12px;
+  box-shadow: 0 31.3944px 33.0467px #FFE473,
+    inset 0 -4.95701px 16.5233px rgb(188 188 188 / 40%);
   border: 1px solid rgba(209, 213, 219, 0.3);
   display: flex;
   flex-direction: column;
@@ -34,6 +45,12 @@ div.scorecard div.scores {
   width: 50%;
   margin: 20px 0;
   overflow-y: auto;
+  border-radius: 25px;
+  z-index: -99999;
+  max-height: 90dvh;
+  overflow: auto;
+
+  
 }
 
 div.scores p.score {

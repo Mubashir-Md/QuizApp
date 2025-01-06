@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-6QY0E24M1G"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-6QY0E24M1G");
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{url_for('static', filename='score.css')}}" />
@@ -22,20 +8,22 @@
   </head>
   <body>
     <div class="scorecard">
-      <div class="scores">
-        <p class="score">{{score}}</p>
-        <div class="answers">
-          <div class="correct">
-            <h3>The correct answers are</h3>
-            {% for answer in correct_answers %}
-            <p>{{ loop.index }}. {{answer}}</p>
-            {% endfor %}
-          </div>
-          <div class="your">
-            <h3>Your submissions</h3>
-            {% for answer in given_answers %}
-            <p>{{ loop.index }}. {{answer}}</p>
-            {% endfor %}
+      <div class="card">
+        <div class="scores">
+          <p class="score">{{score}}</p>
+          <div class="answers">
+            <div class="correct">
+              <h3>The correct answers are</h3>
+              {% for answer in correct_answers %}
+              <p>{{ loop.index }}. {{answer}}</p>
+              {% endfor %}
+            </div>
+            <div class="your">
+              <h3>Your submissions</h3>
+              {% for answer in given_answers %}
+              <p>{{ loop.index }}. {{answer}}</p>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>

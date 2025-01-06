@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-6QY0E24M1G"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-6QY0E24M1G");
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}" />
@@ -23,18 +9,19 @@
 
   <body>
     <div class="main">
-      <form action="https://ai-quiz-app.onrender.com/quiz" method="POST">
-        <!-- <form action="http://localhost:5000/quiz" method="POST"> -->
-        <h1>Let's play a Quiz</h1>
-        <div class="topic">
+      <div class="card">
+        <form action="https://ai-quiz-app.onrender.com/quiz" method="POST">
+        <!-- <form action="http://127.0.0.1:5000/quiz" method="POST"> -->
+          <h1>Let's play a Quiz</h1>
+          <div>
           <label for="topic">What's the topic?</label>
-          <input type="text" name="topic" value="" />
+          <input type="text" name="topic" id="topic" value="AI" />
         </div>
-        <div class="ques">
+      <div>
           <label for="questions">How many questions?</label>
-          <input type="number" name="questions" value="" />
+          <input type="number" name="questions" id="questions" value="5" />
         </div>
-        <div class="choices">
+      <div>
           <label for="choices">Number of choices?</label>
           <select name="choices" id="choices">
             <option value="two">Two</option>
@@ -43,7 +30,7 @@
             <option value="true/false">True/False</option>
           </select>
         </div>
-        <div class="diff">
+        <div>
           <label for="difficulty">Difficulty?</label>
           <select name="difficulty" id="difficulty">
             <option value="easy">Easy</option>
@@ -51,8 +38,26 @@
             <option value="hard">Hard</option>
           </select>
         </div>
-        <button type="submit">Submit</button>
-      </form>
+          <button id="btn">Submit</button>
+        </form>
+      </div>
     </div>
+
+    <div class="loading-screen" id="loadingScreen" style="display: none;">
+      <div class="loading-content">
+          <div class="brain-loader">🧠</div>
+          <h2>Generating Your Quiz</h2>
+          <p>Please wait while we prepare your questions...</p>
+          <div class="progress-bar">
+              <div class="progress-fill"></div>
+          </div>
+      </div>
+  </div>
+
+    <script>
+      document.querySelector('form').addEventListener("submit", function (e) {
+        document.getElementById("loadingScreen").style.display = "flex";
+      });
+    </script>
   </body>
 </html>
