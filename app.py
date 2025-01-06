@@ -1,25 +1,16 @@
 from flask import Flask, render_template, request, session, stream_with_context
-import openai
 import os
 import dotenv
 import json
 import google.generativeai as genai
-# from flask_qrcode import QRcode
-
-# import google.generativeai as genai
 
 dotenv.load_dotenv()
 
 app = Flask(__name__)
-# QRcode(app)
 
 app.secret_key = os.environ.get("SECRET_KEY")
 
 gemini_key = os.environ.get("GEMINI_API_KEY")
-
-
-# openai.api_key = os.environ.get("OPENAI_API_KEY")
-
 
 @app.route("/")
 def hello_world():
