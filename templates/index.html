@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6QY0E24M1G"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-6QY0E24M1G");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}" />
+    <title>AI Quiz App</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <form action="https://ai-quiz-app.onrender.com/quiz" method="POST">
+        <!-- <form action="http://localhost:5000/quiz" method="POST"> -->
+        <h1>Let's play a Quiz</h1>
+        <div class="topic">
+          <label for="topic">What's the topic?</label>
+          <input type="text" name="topic" value="" />
+        </div>
+        <div class="ques">
+          <label for="questions">How many questions?</label>
+          <input type="number" name="questions" value="" />
+        </div>
+        <div class="choices">
+          <label for="choices">Number of choices?</label>
+          <select name="choices" id="choices">
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="true/false">True/False</option>
+          </select>
+        </div>
+        <div class="diff">
+          <label for="difficulty">Difficulty?</label>
+          <select name="difficulty" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
