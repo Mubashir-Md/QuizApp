@@ -12,15 +12,11 @@
         <div class="questions">
           <h1>{{ content.topic }}</h1>
           <form
-          action="https://ai-quiz-app.onrender.com/quiz"
+          action="/quiz"
           method="GET"
           class="question"
         >
-          <!-- <form
-            action="http://127.0.0.1:5000/quiz"
-            method="GET"
-            class="question"
-          > -->
+         
             {% for question in content.questions %}
             <div class="question">
               <p>{{loop.index}}. {{ question.question }}</p>
