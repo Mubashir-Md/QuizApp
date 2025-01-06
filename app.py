@@ -22,8 +22,6 @@ def hello_world():
 @app.route("/quiz", methods=["POST", "GET"])
 def submit():
     if(request.method == "POST"):
-        print(request.form)
-
         topic = request.form['topic']
         questions = request.form['questions']
         choices = request.form['choices']
